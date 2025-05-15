@@ -189,3 +189,19 @@ leo.makeSound(true); // purr, meow
 var cuddles = new Tiger();
 cuddles.makeSound(false); // Roar!
 cuddles.makeSound(true); // purr, Roar!
+
+//Destructure variable
+let {PI} = Math
+console.log(typeof(PI), PI)
+
+//For of, loop an object using array
+var clothingItem = {
+    price: 50,
+    color: 'beige',
+    material: 'cotton',
+    season: 'autumn'
+}
+
+for( const key of Object.keys(clothingItem) ) {
+    console.log(key, ":", clothingItem[key])
+}
