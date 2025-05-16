@@ -205,3 +205,11 @@ var clothingItem = {
 for( const key of Object.keys(clothingItem) ) {
     console.log(key, ":", clothingItem[key])
 }
+
+//Template Literal
+let greet = "Hello";
+let place = "World";
+console.log(greet + " " + place + "!"); //display both variables without using template literals
+console.log(`${greet} ${place} !`) //display both variables using template literals
+
+console.log(`${1 + 1 + 1 + 1 + 1} stars!`) //it's possible to perform arithmetic operation inside a template literal expression
