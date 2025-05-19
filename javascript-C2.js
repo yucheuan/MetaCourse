@@ -309,11 +309,11 @@ function handleClicks () {
 h1.addEventListener('click',handleClicks)
 
 //OOP
-class Animal {
+class Animals {
 
 }
 
-class Dog extends Animal {
+class Dog extends Animals {
     constructor() {
         super();
         this.noise = "bark";
@@ -339,4 +339,4 @@ function addFive(val) {
     return val +5
 }
 
-Module.exports = addFive
+module.exports = addFive;

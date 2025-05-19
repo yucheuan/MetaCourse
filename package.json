@@ -1,0 +1,23 @@
+{
+  "name": "metacourse",
+  "version": "1.0.0",
+  "main": "javascript-C2.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yucheuan/MetaCourse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yucheuan/MetaCourse/issues"
+  },
+  "homepage": "https://github.com/yucheuan/MetaCourse#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
