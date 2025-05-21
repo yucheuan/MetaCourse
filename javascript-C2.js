@@ -1,3 +1,10 @@
+//Jest's mock funtion 
+function addFive(val) {
+    return val +5
+}
+
+module.exports = addFive;
+
 /*
 for (var i=1; i<11; i++)
     {
@@ -259,6 +266,8 @@ fruits1.pop();
 console.log(fruits1, "not", fruits2); // ['apples'] 'not' ['apples','pears'];
 
 //DOM
+// ❗ Wrap browser-only code to prevent Jest from running it
+if (typeof window !== 'undefined') {
 //Prompt
 let answer = prompt('What is your name?');
 if (typeof(answer) === 'string') {
@@ -307,6 +316,7 @@ function handleClicks () {
 }
 
 h1.addEventListener('click',handleClicks)
+}
 
 //OOP
 class Animals {
@@ -333,10 +343,3 @@ class Wolf extends Dog {
 
 var result = new Wolf();
 console.log(result.makeNoise()); // Even though makeNoise() is defined in Dog, it uses this.noise, and this is the Wolf object — which has noise = "growl".
-
-//Jest's mock funtion 
-function addFive(val) {
-    return val +5
-}
-
-module.exports = addFive;
