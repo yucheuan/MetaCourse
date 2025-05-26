@@ -44,7 +44,7 @@
                 <p>Experienced preschool edcuator in San Francisco</p>
             </article>
             <section>
-                <form method="post">
+                <form action="server/api" method="post">
                     <!--
                     <label for="user">Username:</label><br>
                     <input type="text" id="user" name="user" required minlength="3" maxlength="12"><br>
@@ -87,6 +87,7 @@
                             <option value="Uptown"></option>
                         </datalist>
                     </div>
+                    <button type="submit" name="action" value="save">Book</button>
                 </form>
 
                 <style>
