@@ -118,6 +118,41 @@
                 <img src="photo.png" width="320" alt="My Profile Photo"> 
                 <figcaption>A photo of myself on a beach in 2015</figcaption> 
             </figure>
+            
+            <!--flex chart-->
+            <div class="columns">
+                <div class="container">
+                    <div class="bar male" style="flex-basis: 25%"></div>
+                    <div class="bar female" style="flex-basis: 20%"></div>
+                </div>
+                <div class="container">
+                    <div class="bar male" style="flex-basis: 45%"></div>
+                    <div class="bar female" style="flex-basis: 40%"></div>
+                </div>
+                <div class="container">
+                    <div class="bar male" style="flex-basis: 15%"></div>
+                    <div class="bar female" style="flex-basis: 50%"></div>
+                </div>
+            </div>
+            <style>
+                .columns {
+                    display: flex;
+                    height: 400px;
+                    max-width: 300px;
+                    align-items: stretch;
+                    border: 1px solid black;
+                }
+                .container {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                    justify-content: flex-end;
+                }
+                .bar {border-right: 1px solid white;}
+                .female {background-color: aqua;}
+                .male {background-color: aquamarine;}
+            </style>
         </main>
 
         <script src="js/scripts.js"></script>
