@@ -24,7 +24,7 @@
     </head>
     <body>
         <header>
-            <img src="materials/me.jpeg">
+            <img style="width:50%" src="materials/me.jpeg">
         </header>
         <nav>
             <ul>
@@ -154,6 +154,56 @@
                 .male {background-color: aquamarine;}
             </style>
         </main>
+
+        <div class="grid-parent">
+            <div class="grid-segment twelve">Span 12</div>
+            <div class="grid-segment eight">Span 8</div>
+            <div class="grid-segment four">Span 4</div>
+            <div class="grid-segment six">Span 6</div>
+            <div class="grid-segment seven">Span 7</div>
+            <div class="grid-segment twelve" style="margin-bottom: 80px;">Span 12</div>
+
+            <style>
+                .grid-parent {
+                    display: grid;
+                    grid-template-columns: repeat(12, 1fr);
+                }
+                .grid-segment {
+                    display: grid;
+                    place-items: center;
+                    text-align: center;
+                    grid-template-rows: 40px;
+                }
+                .twelve {background-color: lightseagreen; grid-column: 1/ span 12;}
+                .eight {background-color: bisque; grid-column: 5/ span 8;}
+                .four {background-color: lightblue; grid-column: 1/ span 4;}
+                .six {background-color: rgb(126, 171, 168); grid-column: 5/ span 6;}
+                .seven {background-color: pink; grid-column: 3/ span 7;}
+            </style>
+        </div>
+
+        <div id="grid-area">
+            <header> Header </header> 
+            <nav class="nav-bar"> Navigation </nav> 
+            <main> Main area </main> 
+            <footer> Footer </footer> 
+
+            <style>
+                #grid-area {
+                    display: grid;
+                    height: 200px;
+                    grid-template-areas: "head head"
+                                         "nav main"
+                                         "footer footer";
+                    grid-template-rows: 30px 1fr 30px;
+                    grid-template-columns: 150px 1fr;
+                }
+                #grid-area header { grid-area: head; background-color: lightsalmon;}
+                #grid-area .nav-bar { grid-area: nav; background-color: lightblue;}
+                #grid-area main { grid-area: main; background-color: lightyellow;}
+                #grid-area footer { grid-area: footer; background-color: firebrick;}
+            </style>
+        </div>
 
         <script src="js/scripts.js"></script>
     </body>
