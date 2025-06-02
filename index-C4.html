@@ -191,12 +191,19 @@
             <style>
                 #grid-area {
                     display: grid;
-                    height: 200px;
+                    min-height: 50vh;
                     grid-template-areas: "head head"
                                          "nav main"
                                          "footer footer";
                     grid-template-rows: 30px 1fr 30px;
                     grid-template-columns: 150px 1fr;
+                }
+                @media (max-width: 440px) {
+                    #grid-area {
+                        grid-template-areas: "head" "nav" "main" "footer";
+                        grid-template-rows: 30px 30px 1fr 30px;
+                        grid-template-columns: 100%;
+                    }
                 }
                 #grid-area header { grid-area: head; background-color: lightsalmon;}
                 #grid-area .nav-bar { grid-area: nav; background-color: lightblue;}
