@@ -212,6 +212,70 @@
             </style>
         </div>
 
+        <div class="container-effect">
+            <div class="letters">
+                <p>D</p>
+                <p>o</p>
+                <p>n</p>
+                <p>t</p>
+            </div>
+            <div class="letters">
+                <p>W</p>
+                <p>o</p>
+                <p>r</p>
+                <p>r</p>
+                <p>y</p>
+            </div>
+            <div class="letters">
+                <p>B</p>
+                <p>e</p>
+            </div>
+            <div class="letters">
+                <p>H</p>
+                <p>a</p>
+                <p>p</p>
+                <p>p</p>
+                <p>y</p>
+            </div>
+        </div>
+        <style>
+            .container-effect * {margin: 20px 10px;}
+            .container-effect {
+                margin-top: 80px;
+                min-height: 10vh;
+                background-color:bisque;
+            }
+            .letters {
+                display: flex;
+                justify-content: center;
+                padding-top: 10px;
+                margin-bottom: 10px;
+                text-transform:uppercase;
+                font-size: 60px;
+            }
+            /* p card */
+            .letters p {
+                text-align: center;
+                background-color: rgb(250, 150, 100);
+                width: 70px;
+                margin-right: 1.5px;
+                border-radius: 15%;
+                border-color: rgb(250, 125, 75);
+                border-style: solid;
+            }
+            /* even and odd fliping animation*/
+            .letters:hover p:nth-child(even) {
+                transform: rotateY(360deg);
+                transition: 0.5s;
+            }
+            .letters:hover p:nth-child(odd) {
+                transform: rotateX(360deg);
+                transition: 1.5s;
+            }
+
+
+        </style>
+
         <script src="js/scripts.js"></script>
     </body>
     <footer>
