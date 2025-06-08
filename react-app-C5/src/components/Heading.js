@@ -1,4 +1,4 @@
 //functional component Heading in Heading file
-export default function Heading() {
-  return <h1>Hello world 😃</h1>
+export default function Heading(props) {
+  return <h1>Hello world {props.emoji}</h1>
 }
