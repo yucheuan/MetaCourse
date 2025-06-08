@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import Heading from "./components/Heading"
+import Intro from './components/Intro';
+
+const bool = false;
+const str1 = "just";
 
 //functional component App in App file
 function App() {
@@ -10,17 +14,11 @@ function App() {
         <Heading emoji="~ 🦭" />  
         <Heading emoji="~ 🪿" />  
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Intro
+                toggleBoolean={!bool}
+                math={(10 + 20) / 3}
+                str={str1 + ' another ' + 'string'}
+            />
       </header>
     </div>
   );
