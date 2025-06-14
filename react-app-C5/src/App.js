@@ -9,12 +9,19 @@ const str1 = "just";
 
 //functional component App in App file
 function App() {
+  const [word, setWord] = React.useState('Eat')
+
+  function handleClick () {
+   setWord('Drink')
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <Heading emoji="~ 🦭" />  
-        <Heading emoji="~ 🪿" /> 
+        <Heading emoji={word} /> 
         <Btn /> 
+        <button onClick={handleClick}>Click here</button>
         <img src={logo} className="App-logo" alt="logo" />
         <Intro
                 toggleBoolean={!bool}
