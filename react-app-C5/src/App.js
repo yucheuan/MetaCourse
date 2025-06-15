@@ -3,13 +3,12 @@ import './App.css';
 import Heading from "./components/Heading"
 import Btn from './Btn';
 import Intro from './components/Intro';
-
-const bool = false;
-const str1 = "just";
+import {Routes, Route, Link} from 'react-router-dom'
+import React, { useState } from 'react';
 
 //functional component App in App file
 function App() {
-  const [word, setWord] = React.useState('Eat')
+  const [word, setWord] = useState('Eat')
 
   function handleClick () {
    setWord('Drink')
@@ -23,11 +22,16 @@ function App() {
         <Btn /> 
         <button onClick={handleClick}>Click here</button>
         <img src={logo} className="App-logo" alt="logo" />
-        <Intro
-                toggleBoolean={!bool}
-                math={(10 + 20) / 3}
-                str={str1 + ' another ' + 'string'}
-            />
+
+        <Routes>
+	        {/* <Route path="/" element={<Homepage />} /> */}
+	        <Route path="/intro" element={<Intro />} />	
+        </Routes> 
+        <nav>
+	        <Link to="/" className="nav-item">Homepage</Link> 
+          &nbsp;
+	        <Link to="/intro" className="nav-item">Introduction</Link>	
+        </nav>
       </header>
     </div>
   );
