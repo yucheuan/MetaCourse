@@ -20,10 +20,11 @@ function App() {
         <Heading emoji="~ 🦭" />  
         <Heading emoji={word} /> 
         <Btn /> 
-        <button onClick={handleClick}>Click here</button>
+        <br></br>
+        <button onClick={handleClick}>Click here to change word</button>
         <img src={logo} className="App-logo" alt="logo" />
 
-        <Routes>
+        <Routes> 
 	        {/* <Route path="/" element={<Homepage />} /> */}
 	        <Route path="/intro" element={<Intro />} />	
         </Routes> 

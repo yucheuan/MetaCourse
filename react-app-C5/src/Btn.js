@@ -2,7 +2,7 @@ export default function Btn() {
     const clickHandler = () => console.log('clicked')   
     return (
         <button onClick={clickHandler}>
-            Click me
+            Click me to console log
         </button>
     )
 }
