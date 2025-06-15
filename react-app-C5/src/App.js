@@ -5,6 +5,7 @@ import Btn from './Btn';
 import Intro from './components/Intro';
 import {Routes, Route, Link} from 'react-router-dom'
 import React, { useState } from 'react';
+import CurrentMessage from './components/CurrentMessage';
 
 //functional component App in App file
 function App() {
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Heading emoji="~ 🦭" />  
+        <CurrentMessage />  
         <Heading emoji={word} /> 
         <Btn /> 
         <br></br>
