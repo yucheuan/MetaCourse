@@ -23,4 +23,3 @@ export default function CurrentMessage({day}) {
 export const Workdays = () => <h1> Today is a workday</h1>
 export const Weekends = () => <h1> Today is a weekend</h1>
 export const ErrorComponent = () => <h1> Error for Current Message</h1>
-

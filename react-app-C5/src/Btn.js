@@ -7,6 +7,17 @@ export default function Btn() {
     )
 }
 
+//using props to render different component to control state
+export function LogInOutButton(props) {
+  const isLoggedIn = props.isLoggedIn;
+  
+  if (isLoggedIn) {
+    return <LogoutButton />;
+  } else {
+  return <LoginButton />;
+  }
+}
+
 /*
 function Form() {
 import { useState } from 'react'; 
