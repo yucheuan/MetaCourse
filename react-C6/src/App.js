@@ -16,6 +16,7 @@ const data = [
   },
 ];
 
+//data transformation for new object
 const topDeseserts = data.map(dessert => {
   return{
     content: `${dessert.title} - ${dessert.description}`,
@@ -24,22 +25,16 @@ const topDeseserts = data.map(dessert => {
 })
 
 function App() {
+  const listItems = data.map(dessert => {
+    const itemText = `${dessert.title} - ${dessert.price}` //this is in JavaScript env -> use `${ }`
+    return <li>{itemText}</li> //this is to render React component -> use { }
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ul>
+        {listItems}
+      </ul>
     </div>
   );
 }
