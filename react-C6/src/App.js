@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Form from './Form';
+import Signup from './Signup';
 
 const data = [
   {
@@ -37,6 +38,7 @@ function App() {
         {listItems}
       </ul>
       <Form />
+      <Signup />
     </div>
   );
 }
