@@ -7,7 +7,7 @@ const PasswordErrorMessage = () => {
  ); 
 }; 
  
-export default function Login () { 
+export default function Signup () { 
  const [firstName, setFirstName] = useState(""); 
  const [lastName, setLastName] = useState(""); 
  const [email, setEmail] = useState(""); 
