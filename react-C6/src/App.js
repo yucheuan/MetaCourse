@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import Form from './Form';
 import Signup from './Signup';
+import Switch from './Switch';
+import { useTheme } from './ThemeContext';
+import { lightColors, darkColors } from './tokens';
 
 const data = [
   {
@@ -27,6 +30,7 @@ const topDeseserts = data.map(dessert => {
 })
 
 function App() {
+  const { theme } = useTheme();
   const listItems = data.map(dessert => {
     const itemText = `${dessert.title} - ${dessert.price}` //this is in JavaScript env -> use `${ }`
     return <li>{itemText}</li> //this is to render React component -> use { }
@@ -34,6 +38,15 @@ function App() {
 
   return (
     <div>
+      <div
+      className="App"
+      style={{
+        backgroundColor: theme === "light" ? lightColors.background : darkColors.background
+      }}
+      >
+        <Switch />
+        <Paragraph>This is theme-based paragraph</Paragraph>
+      </div>
       <ul>
         {listItems}
       </ul>
@@ -44,3 +57,16 @@ function App() {
 }
 
 export default App;
+
+const Paragraph = ({ children }) => {
+  const { theme } = useTheme();
+  return (
+    <p
+      style={{
+        color: theme === "light" ? lightColors.primary : darkColors.primary,
+      }}
+    >
+      {children}
+    </p>
+  );
+};
