@@ -7,6 +7,8 @@ import Switch from './Switch';
 import { useTheme } from './ThemeContext';
 import { lightColors, darkColors } from './tokens';
 import { useState } from 'react';
+import FetchAPI from './FetchAPI';
+import Calculator from './Calculator';
 
 const data = [
   {
@@ -71,6 +73,8 @@ function App() {
       </ul>
       <Form onAdd={addFeedback} />
       <ListOfFeedback allFeedback={allFeedback} />
+      <FetchAPI />
+      <Calculator />
       <Signup />
     </div>
   );
