@@ -51,6 +51,7 @@ function App() {
     return <li>{itemText}</li> //this is to render React component -> use { }
   })
 
+  //form data -> pass to form and display list
   const [allFeedback, updateAllFeedback] = useState([])
   function addFeedback(feedback) { updateAllFeedback([...allFeedback, feedback])} //add one item in array
 
