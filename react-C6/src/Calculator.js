@@ -7,12 +7,16 @@ const reducer = (state, action) => {
 }
 
 export default function Calculator (){
+    const initialState = {money: 100}
     const [state, dispatch] = useReducer(reducer, initialState)
 
     return (
         <div>
-            <button onClick={dispatch({type: 'spend_$'})}>Spend $</button>
-            <button onClick={dispatch({type: 'earn_$'})}>Earn $</button>
+            <h1>Wallet: {state.money}</h1>
+            <div>
+                <button onClick={() => dispatch({type: 'spend_$'})}>Spend money</button>
+                <button onClick={() => dispatch({type: 'earn_$'})}>Earn money</button>
+            </div>
         </div>
     )
 }
