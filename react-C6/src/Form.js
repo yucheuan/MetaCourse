@@ -1,20 +1,21 @@
 import { useState } from "react"
 
-export default function Form (){
-    const [name, setName] = useState("")
-    const [score, setScore] = useState("10")
-    const [comment, setComment] = useState("")
+export default function Form (props){
+    const [formData, setFormData] = useState({name: "", comment: "", score: "10"}) //state object
+
+    function changeHandler (e) {
+        setFormData({ ...formData, [e.target.name]: e.target.value}) //use name to dynamic target element
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (Number(score) <= 5 && comment.length <= 10) {
+        if (Number(formData.score) <= 5 && formData.comment.length <= 10) {
             alert("PLease provide a comment explaining why the experience was poor")
             return
         }
 
-        setName("")
-        setScore("10")
-        setComment("")
+        props.onAdd(formData) //acumulate a feedback list
+        setFormData({name: "", comment: "", score: "10"}) //reset user input
         console.log("Form Submitted!")
     }
 
@@ -26,30 +27,45 @@ export default function Form (){
                     <input
                         id="name"
                         type="text"
+                        name="name" //use name to dynamic target element
                         placeholder="Name"
-                        name="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)} 
+                        value={formData.name} //display variable
+                        onChange={changeHandler} //rerender disply
                     />
                 </div>
                 <div>
-                    <label>Score: {score}</label>
+                    <label>Score: {formData.score}</label>
                     <input
                         type="range"
                         min="0"
                         max="10"
-                        value={score}
-                        onChange={e => setScore(e.target.value)} 
+                        name="score"
+                        value={formData.score} 
+                        onChange={changeHandler} 
                     />
                 </div>
                 <div>
-                    <lable>Comment:</lable>
-                    <textarea value={comment} onChange={e => setComment(e.target.value)}/>
+                    <lable htmlFor="comment">Comment:</lable>
+                    <textarea name="comment" placeholder="Share with us" value={formData.comment} onChange={changeHandler}/>
                 </div>
-                <button disabled={!name} type="submit">
+                <button disabled={!formData.name} type="submit">
                     Submit
                 </button>
             </fieldset>
         </form>
+    )
+}
+
+export function ListOfFeedback (props) {
+    return (
+        <div>
+            <ul>
+                {props.allFeedback.map((f) => (
+                    <li key={f.name}>
+                        <span>{f.name}: My expereince is {f.score}/10 with comment- {f.comment}</span>
+                    </li>
+                ))}
+            </ul>
+        </div>
     )
 }

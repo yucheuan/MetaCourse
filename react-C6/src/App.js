@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import Form from './Form';
+import { ListOfFeedback } from './Form';
 import Signup from './Signup';
 import Switch from './Switch';
 import { useTheme } from './ThemeContext';
 import { lightColors, darkColors } from './tokens';
+import { useState } from 'react';
 
 const data = [
   {
@@ -29,12 +31,28 @@ const topDeseserts = data.map(dessert => {
   }
 })
 
+const Paragraph = ({ children }) => {
+  const { theme } = useTheme();
+  return (
+    <p
+      style={{
+        color: theme === "light" ? lightColors.primary : darkColors.primary,
+      }}
+    >
+      {children}
+    </p>
+  );
+};
+
 function App() {
   const { theme } = useTheme();
   const listItems = data.map(dessert => {
     const itemText = `${dessert.title} - ${dessert.price}` //this is in JavaScript env -> use `${ }`
     return <li>{itemText}</li> //this is to render React component -> use { }
   })
+
+  const [allFeedback, updateAllFeedback] = useState([])
+  function addFeedback(feedback) { updateAllFeedback([...allFeedback, feedback])} //add one item in array
 
   return (
     <div>
@@ -50,7 +68,8 @@ function App() {
       <ul>
         {listItems}
       </ul>
-      <Form />
+      <Form onAdd={addFeedback} />
+      <ListOfFeedback allFeedback={allFeedback} />
       <Signup />
     </div>
   );
@@ -58,15 +77,4 @@ function App() {
 
 export default App;
 
-const Paragraph = ({ children }) => {
-  const { theme } = useTheme();
-  return (
-    <p
-      style={{
-        color: theme === "light" ? lightColors.primary : darkColors.primary,
-      }}
-    >
-      {children}
-    </p>
-  );
-};
+
