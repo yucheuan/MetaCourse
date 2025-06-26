@@ -10,6 +10,7 @@ import { useState } from 'react';
 import FetchAPI from './FetchAPI';
 import Calculator from './Calculator';
 import Row from './Row';
+import RadioMenu from './RadioMenu';
 
 const data = [
   {
@@ -81,6 +82,7 @@ function App() {
         <p>Should be</p>
         <p>Separate</p>
       </Row>
+      <RadioMenu />
       <Signup />
     </div>
   );
