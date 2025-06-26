@@ -24,7 +24,7 @@ export const RadioOption = ({ value, checked, onChange, children }) => {
         type="radio" 
         name={value} 
         value={value}
-        checked={checked}
+        checked={checked} //take type boolean 
         onChange={(e) => {
           onChange(e.target.value) //onChange is setSelected() -> change selected to option's value
         }}
