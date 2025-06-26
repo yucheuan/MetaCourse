@@ -9,6 +9,7 @@ import { lightColors, darkColors } from './tokens';
 import { useState } from 'react';
 import FetchAPI from './FetchAPI';
 import Calculator from './Calculator';
+import Row from './Row';
 
 const data = [
   {
@@ -75,6 +76,11 @@ function App() {
       <ListOfFeedback allFeedback={allFeedback} />
       <FetchAPI />
       <Calculator />
+      <Row spacing={32}>
+        <p>This</p>
+        <p>Should be</p>
+        <p>Separate</p>
+      </Row>
       <Signup />
     </div>
   );
