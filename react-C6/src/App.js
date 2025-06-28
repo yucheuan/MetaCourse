@@ -11,6 +11,7 @@ import FetchAPI from './FetchAPI';
 import Calculator from './Calculator';
 import Row from './Row';
 import RadioMenu from './RadioMenu';
+import { PanelMouseLogger, PointMouseLogger } from './MouseLogger';
 
 const data = [
   {
@@ -83,6 +84,8 @@ function App() {
         <p>Separate</p>
       </Row>
       <RadioMenu />
+      <PanelMouseLogger />
+      <PointMouseLogger />
       <Signup />
     </div>
   );

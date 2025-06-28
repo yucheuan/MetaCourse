@@ -116,6 +116,11 @@ button[disabled] {
   cursor: not-allowed;
 }
 
+.BasicTracker {
+  border: 1px solid black;
+  padding: 16px;
+  margin-bottom: 128px;
+}
 
 /*Switch CSS code below*/
 .switch {
